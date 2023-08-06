@@ -1,8 +1,930 @@
-<p>网站</p>
-<p>编程视界</p>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<title>吴师兄学算法_致力于让每个小白都能看懂每一道算法题，希望我们都能在程序员职业生涯走的更远一些！</title>
+<meta name='robots' content='max-image-preview:large' />
+<meta name="keywords" content="吴师兄,五分钟学算法,程序员吴师兄,超级吴师兄,吴师兄学算法,">
+<meta name="description" content="吴师兄学算法(www.cxyxiaowu.com)提供许多数据结构与算法学习的基础知识, 涵盖 LeetCode 题解、剑指 Offer 题解、数据结构等内容。
+">
+<link href="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646294643-72f6b43ed1d3a8b.png" rel="icon">
+<link rel='stylesheet' id='BEEPRESSCSS-css'  href='https://www.cxyxiaowu.com/wp-content/plugins/beepress/lib/beepress.css?ver=6.3.6' media='screen' />
+<link rel='stylesheet' id='bbp-default-css'  href='https://www.cxyxiaowu.com/wp-content/plugins/bbpress/templates/default/css/bbpress.css?ver=2.5.14-6684' media='screen' />
+<style id='md-style-inline-css'>
+ .copy-button { cursor: pointer; border: 0; font-size: 12px; text-transform: uppercase; font-weight: 500; padding: 3px 6px 3px 6px; background-color: rgba(255, 255, 255, 0.6); position: absolute; overflow: hidden; top: 5px; right: 5px; border-radius: 3px; } .copy-button:before { content: ""; display: inline-block; width: 16px; height: 16px; margin-right: 3px; background-size: contain; background-image: url("data:image/svg+xml,%3Csvg version=\'1.1\' xmlns=\'http://www.w3.org/2000/svg\' xmlns:xlink=\'http://www.w3.org/1999/xlink\' x=\'0px\' y=\'0px\' width=\'16px\' height=\'16px\' viewBox=\'888 888 16 16\' enable-background=\'new 888 888 16 16\' xml:space=\'preserve\'%3E %3Cpath fill=\'%23333333\' d=\'M903.143,891.429c0.238,0,0.44,0.083,0.607,0.25c0.167,0.167,0.25,0.369,0.25,0.607v10.857 c0,0.238-0.083,0.44-0.25,0.607s-0.369,0.25-0.607,0.25h-8.571c-0.238,0-0.44-0.083-0.607-0.25s-0.25-0.369-0.25-0.607v-2.571 h-4.857c-0.238,0-0.44-0.083-0.607-0.25s-0.25-0.369-0.25-0.607v-6c0-0.238,0.06-0.5,0.179-0.786s0.262-0.512,0.428-0.679 l3.643-3.643c0.167-0.167,0.393-0.309,0.679-0.428s0.547-0.179,0.786-0.179h3.714c0.238,0,0.44,0.083,0.607,0.25 c0.166,0.167,0.25,0.369,0.25,0.607v2.929c0.404-0.238,0.785-0.357,1.143-0.357H903.143z M898.286,893.331l-2.67,2.669h2.67V893.331 z M892.571,889.902l-2.669,2.669h2.669V889.902z M894.321,895.679l2.821-2.822v-3.714h-3.428v3.714c0,0.238-0.083,0.441-0.25,0.607 s-0.369,0.25-0.607,0.25h-3.714v5.714h4.571v-2.286c0-0.238,0.06-0.5,0.179-0.786C894.012,896.071,894.155,895.845,894.321,895.679z M902.857,902.857v-10.286h-3.429v3.714c0,0.238-0.083,0.441-0.25,0.607c-0.167,0.167-0.369,0.25-0.607,0.25h-3.714v5.715H902.857z\' /%3E %3C/svg%3E"); background-repeat: no-repeat; position: relative; top: 3px; } pre { position: relative; } pre:hover .copy-button { background-color: rgba(255, 255, 255, 0.9); } 
+</style>
+<link rel='stylesheet' id='bootstrap-css'  href='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/bootstrap/css/bootstrap.min.css?ver=4.6.0' media='all' />
+<link rel='stylesheet' id='csf-fa5-css'  href='https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/all.min.css?ver=5.14.0' media='all' />
+<link rel='stylesheet' id='csf-fa5-v4-shims-css'  href='https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.1/css/v4-shims.min.css?ver=5.14.0' media='all' />
+<link rel='stylesheet' id='plugins-css'  href='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/css/plugins.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='app-css'  href='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/css/app.css?ver=4.4.0' media='all' />
+<link rel='stylesheet' id='dark-css'  href='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/css/dark.css?ver=4.4.0' media='all' />
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/js/jquery.min.js?ver=3.5.1' id='jquery-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/plugins/beepress/lib/player.js?ver=6.3.6' id='PLAYERJS-js'></script>
+<link rel="icon" href="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2019/10/1571053763-b2026b1c5e041d0-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2019/10/1571053763-b2026b1c5e041d0-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2019/10/1571053763-b2026b1c5e041d0-180x180.png" />
+<meta name="msapplication-TileImage" content="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2019/10/1571053763-b2026b1c5e041d0-270x270.png" />
+</head>
+<body class="home blog hfeed wide-screen navbar-regular pagination-numeric paged-next no-off-canvas sidebar-none modular-title-1">
+<div id="app" class="site">
+	
+<header class="site-header">
+    <div class="container">
+	    <div class="navbar">
+			  <div class="logo-wrapper">
+          <a href="https://www.cxyxiaowu.com/">
+        <img class="logo regular" src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646314667-6d771ad1cdf40bd.png" alt="吴师兄学算法">
+      </a>
+    
+  </div> 			
+			<div class="sep"></div>
+			
+			<nav class="main-menu d-none d-lg-block">
+			<ul id="menu-menu-1" class="nav-list u-plain-list"><li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home"><a href="https://www.cxyxiaowu.com/"><i class="fa fa-home"></i>首页</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="https://www.algomooc.com/1809.html"><i class="fab fa-fly"></i>LeetCode 视频</a></li>
+</ul>			</nav>
+			
+			<div class="actions">
+				
+								<span class="btn btn-sm search-open navbar-button ml-2" rel="nofollow noopener noreferrer" data-action="omnisearch-open" data-target="#omnisearch" title="搜索"><i class="fas fa-search"></i></span>
+				
+				
+						        <span class="btn btn-sm toggle-dark navbar-button ml-2" rel="nofollow noopener noreferrer" title="夜间模式"><i class="fa fa-moon-o"></i></span>
+                                
+				<!-- user navbar dropdown  -->
+		        				<a class="login-btn navbar-button ml-2" rel="nofollow noopener noreferrer" href="#"><i class="fa fa-user mr-1"></i>登录</a>
+								<!-- user navbar dropdown -->
 
-<ul>
-  <li> <a href="https://chat-shared2.zhile.io/">Chat GPT</a> </li>
-</ul>
+                
+		        <div class="burger"></div>
 
+		        
+		    </div>
+		    
+	    </div>
+    </div>
+</header>
+
+<div class="header-gap"></div>
+
+	<main id="main" role="main" class="site-content"><div id="rizhuti_v2_module_search-2" class="section rizhuti_v2-widget-search-bg"><div class="container">        <div class="module lazyload search-bg jarallax-sarch img" data-bg="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646266924-b8b953c89889925.jpg">
+            <div class="search-bg-overlay"></div>
+            <div class="container">
+                <h2 class="search-title">吴师兄学算法</h2>
+                <p class="search-desc">分享算法知识</p>
+                
+                
+                <div class="search-form">
+                    <form method="get" action="https://www.cxyxiaowu.com/">
+                        
+                        <div class="search-fields radius-30">
+                          <input type="text" class="" placeholder="" autocomplete="off" value="" name="s" required="required">
+                          <button class="" type="submit"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="popula-search-key"><span>热门搜索：</span><a href="https://www.cxyxiaowu.com/search/LeetCode">LeetCode</a>，<a href="https://www.cxyxiaowu.com/search/%E5%89%91%E6%8C%87Offer">剑指Offer</a>，</div>            </div>
+        </div>
+
+        </div></div><div id="rizhuti_v2_module_division-2" class="section rizhuti_v2-widget-division"><div class="container">
+        <div class="module division">
+            <div class="container">
+                <div class="row align-items-center no-gutters">
+        
+                                   <div class="col-xl-3 col-lg-4 col-6 mb-4">
+                    <a href="https://appbmkegaqt8488.h5.xiaoeknow.com/v1/course/column/p_621cde75e4b04d7e2fd09ed8?type=3" title="看动画刷剑指 Offer">                      <div class="d-flex align-items-center hover-rounded">
+                        <span class="icon-sahpe text-center rounded-circle"> <i class="fab fa-vuejs"> </i></span>
+                        <div class="ml-3 overflow">
+                          <h4 class="title mb-0">看动画刷剑指 Offer</h4>
+                          <p class="desc mb-0">看动画，十分钟弄懂一道题！</p>
+                        </div>
+                      </div>
+                    </a>                    </div>
+                                   <div class="col-xl-3 col-lg-4 col-6 mb-4">
+                    <a href="https://www.algomooc.com/1809.html" title="吴师兄算法训练营">                      <div class="d-flex align-items-center hover-rounded">
+                        <span class="icon-sahpe text-center rounded-circle"> <i class="fab fa-connectdevelop"> </i></span>
+                        <div class="ml-3 overflow">
+                          <h4 class="title mb-0">吴师兄算法训练营</h4>
+                          <p class="desc mb-0">零基础学算法完整体系课</p>
+                        </div>
+                      </div>
+                    </a>                    </div>
+                                   <div class="col-xl-3 col-lg-4 col-6 mb-4">
+                    <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzUyNjQxNjYyMg==&action=getalbum&album_id=2271618969465995270#wechat_redirect" title="LeetCode牛逼系列">                      <div class="d-flex align-items-center hover-rounded">
+                        <span class="icon-sahpe text-center rounded-circle"> <i class="fab fa-buffer"> </i></span>
+                        <div class="ml-3 overflow">
+                          <h4 class="title mb-0">LeetCode牛逼系列</h4>
+                          <p class="desc mb-0">LeetCode上面的一些骚操作</p>
+                        </div>
+                      </div>
+                    </a>                    </div>
+                                   <div class="col-xl-3 col-lg-4 col-6 mb-4">
+                    <a href="https://mp.weixin.qq.com/s/J3PwqU8D-J3BHqru7ZnC3A" title="逆袭之路">                      <div class="d-flex align-items-center hover-rounded">
+                        <span class="icon-sahpe text-center rounded-circle"> <i class="fas fa-medal"> </i></span>
+                        <div class="ml-3 overflow">
+                          <h4 class="title mb-0">逆袭之路</h4>
+                          <p class="desc mb-0">一个程序员的故事</p>
+                        </div>
+                      </div>
+                    </a>                    </div>
+                
+                </div>
+            </div>
+        </div>
+
+    </div></div><div id="rizhuti_v2_module_dynamic-2" class="section rizhuti_v2-widget-dynamic"><div class="container"><div class="module owl-dynamic alert-primary"><span class="d-none d-lg-block float-left"><span class="badge badge-danger mr-2"><i class="fa fa-volume-up"></i> 网站动态<sup class="spinner-grow spinner-grow-sm ml-1 small" role="status" aria-hidden="true" style=" width: .5rem; height: .5rem; "></sup></span></span><div class="scroll-dynamic"><ul><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11分钟前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11分钟前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11小时前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11小时前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11小时前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功加入了本站新用户</b> <span class="badge badge-secondary-lighten ml-1">11小时前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>k******1</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11小时前</span></a></li><li class=""><a rel="bookmark" href="javascript:void(0);"><span>游*</span> <b>成功登录了本站</b> <span class="badge badge-secondary-lighten ml-1">11小时前</span></a></li></ul></div><span class="float-right d-none d-lg-block"><small class="mr-2">今日发布<span class="badge badge-primary-lighten ml-1">0</span></small><small class="mr-2">本周<span class="badge badge-primary-lighten ml-1">0</span></small><small class="mr-2">总数<span class="badge badge-primary-lighten ml-1">2696</span></small></span></div>
+        <script type="text/javascript">
+            jQuery(function() {
+                'use strict';
+                setInterval('AutoScroll(".scroll-dynamic")', 3000);
+            });
+        </script>
+
+        </div></div><div id="rizhuti_v2_module_post_item-3" class="section rizhuti_v2-widget-catpost"><div class="container">
+                <div class="row">
+            <div class="col-lg col-sm-12">
+                <h3 class="section-title d-flex align-items-center mb-lg-4 mb-2">有趣的算法题<small></small></h3>
+            </div>
+            <div class="col-lg-auto col-sm-12">
+                        </div>
+        </div>
+        
+
+        <div class="module posts-wrapper grid">
+            <div class="row">
+              
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21834" class="post post-grid post-21834 type-post status-publish format-standard has-post-thumbnail hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21834.html" title="【链表篇】LeetCode 876、链表的中间结点" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/11/1669689755-cc56370345c0f01-300x200.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="【链表篇】LeetCode 876、链表的中间结点" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21834.html" title="【链表篇】LeetCode 876、链表的中间结点" rel="bookmark">【链表篇】LeetCode 876、链表的中间结点</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-11-25T03:01:22+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    8月前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 222</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21583" class="post post-grid post-21583 type-post status-publish format-standard hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21583.html" title="LeetCode 的这个骚操作，笑到我了！" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277589-f2e17b298b8b0c6-300x200.jpg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="LeetCode 的这个骚操作，笑到我了！" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21583.html" title="LeetCode 的这个骚操作，笑到我了！" rel="bookmark">LeetCode 的这个骚操作，笑到我了！</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-03-03T11:50:43+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    1年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 1.5K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21606" class="post post-grid post-21606 type-post status-publish format-standard hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21606.html" title="有人 LeetCode 第一题都做不出来" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2021/04/7-1619514026.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="有人 LeetCode 第一题都做不出来" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21606.html" title="有人 LeetCode 第一题都做不出来" rel="bookmark">有人 LeetCode 第一题都做不出来</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-03-03T16:50:33+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    1年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 4.5K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21840" class="post post-grid post-21840 type-post status-publish format-standard has-post-thumbnail hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21840.html" title="我被拉黑了" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/11/1669689762-2a89555071fc3eb-300x200.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="我被拉黑了" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21840.html" title="我被拉黑了" rel="bookmark">我被拉黑了</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-11-26T02:31:47+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    8月前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 517</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21575" class="post post-grid post-21575 type-post status-publish format-standard hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21575.html" title="一道美团算法题，Don E.Knuth 花了 24 小时才解出来！" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2021/04/5-1619666037.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="一道美团算法题，Don E.Knuth 花了 24 小时才解出来！" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21575.html" title="一道美团算法题，Don E.Knuth 花了 24 小时才解出来！" rel="bookmark">一道美团算法题，Don E.Knuth 花了 24 小时才解出来！</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-03-03T11:33:38+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    1年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 2.5K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21581" class="post post-grid post-21581 type-post status-publish format-standard hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21581.html" title="LeetCode 骚操作：为什么不 ban 猛犸！" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277587-c06eb67fbe2d015-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="LeetCode 骚操作：为什么不 ban 猛犸！" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21581.html" title="LeetCode 骚操作：为什么不 ban 猛犸！" rel="bookmark">LeetCode 骚操作：为什么不 ban 猛犸！</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-03-03T11:49:44+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    1年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 1.3K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21860" class="post post-grid post-21860 type-post status-publish format-standard has-post-thumbnail hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21860.html" title="字节面试题，最优解通过！" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/11/1669689778-d77953ec4619244-300x200.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="字节面试题，最优解通过！" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21860.html" title="字节面试题，最优解通过！" rel="bookmark">字节面试题，最优解通过！</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-11-29T02:31:02+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    8月前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 720</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21822" class="post post-grid post-21822 type-post status-publish format-standard has-post-thumbnail hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21822.html" title="加油，会越来越快的！" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/11/1669689746-a1eb0ee6bbf171e-300x200.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="加油，会越来越快的！" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21822.html" title="加油，会越来越快的！" rel="bookmark">加油，会越来越快的！</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-11-23T02:31:45+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    9月前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 326</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21829" class="post post-grid post-21829 type-post status-publish format-standard has-post-thumbnail hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21829.html" title="LeetCode 26：删除有序数组中的重复项" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/11/1669689751-b5360248392dacb-300x200.jpeg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="LeetCode 26：删除有序数组中的重复项" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21829.html" title="LeetCode 26：删除有序数组中的重复项" rel="bookmark">LeetCode 26：删除有序数组中的重复项</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-11-24T02:30:52+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    9月前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 454</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-5ths col-lg-3 col-md-4 col-6">
+
+	<article id="post-21579" class="post post-grid post-21579 type-post status-publish format-standard hentry category-leetcode">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/21579.html" title="刷到 LeetCode 这个评论，我沉默了！" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277860-ea3ec108ecc9f8c-300x200.jpg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="刷到 LeetCode 这个评论，我沉默了！" /></a></div></div>	    
+	    <div class="entry-wrapper">
+	    	
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/leetcode" rel="category"><i class="dot"></i>有趣的算法题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/21579.html" title="刷到 LeetCode 这个评论，我沉默了！" rel="bookmark">刷到 LeetCode 这个评论，我沉默了！</a></h2>	    	</header>
+	      	
+	      	
+	      	<div class="entry-footer">
+			          <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2022-03-03T11:49:01+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    1年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 1.3K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+            </div>
+            
+
+        </div>
+      </div></div><div id="rizhuti_v2_module_post_item-4" class="section rizhuti_v2-widget-catpost"><div class="container">
+                <div class="row">
+            <div class="col-lg col-sm-12">
+                <h3 class="section-title d-flex align-items-center mb-lg-4 mb-2">数据结构面试题<small></small></h3>
+            </div>
+            <div class="col-lg-auto col-sm-12">
+                        </div>
+        </div>
+        
+
+        <div class="module posts-wrapper list">
+            <div class="row">
+              
+<div class="col-lg-6 col-12">
+
+	<article id="post-19050" class="post post-list post-19050 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/19050.html" title="索引是个什么样的数据结构呢?" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277586-896ae176faf93e0-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="索引是个什么样的数据结构呢?" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/19050.html" title="索引是个什么样的数据结构呢?" rel="bookmark">索引是个什么样的数据结构呢?</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">索引的数据结构和具体存储引擎的实现有关, 在MySQL中使用较多的索引有Hash索引,B+树...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-09-20T10:23:46+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 843</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-19271" class="post post-list post-19271 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/19271.html" title="Redis有哪些数据结构？" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277587-c06eb67fbe2d015-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="Redis有哪些数据结构？" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/19271.html" title="Redis有哪些数据结构？" rel="bookmark">Redis有哪些数据结构？</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">Redis 有 5 种基础数据结构，它们分别是：string(字符串)、list(列表)、h...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-09-23T08:58:24+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 807</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-16294" class="post post-list post-16294 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/16294.html" title="13 道数据结构和算法面试题总结（含答案解析和思维导图）" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2021/05/20210531175610444.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="13 道数据结构和算法面试题总结（含答案解析和思维导图）" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/16294.html" title="13 道数据结构和算法面试题总结（含答案解析和思维导图）" rel="bookmark">13 道数据结构和算法面试题总结（含答案解析和思维导图）</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">前言 关于 数据结构和算法 系列面试知识点程序员小吴总结了一个思维导图，分享给大家。 你可以...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-05-26T20:46:19+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 8.2K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-20018" class="post post-list post-20018 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/20018.html" title="一网打尽面试中常被问及的8种数据结构" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277858-c7b13cd8ce47789-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="一网打尽面试中常被问及的8种数据结构" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/20018.html" title="一网打尽面试中常被问及的8种数据结构" rel="bookmark">一网打尽面试中常被问及的8种数据结构</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">数据结构是一种特殊的组织和存储数据的方式，可以使我们可以更高效地对存储的数据执行操作。数据结...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-10-12T15:14:28+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 1.1K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-20160" class="post post-list post-20160 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/20160.html" title="盘点那些必问的数据结构算法题之二叉树基础" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277586-896ae176faf93e0-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="盘点那些必问的数据结构算法题之二叉树基础" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/20160.html" title="盘点那些必问的数据结构算法题之二叉树基础" rel="bookmark">盘点那些必问的数据结构算法题之二叉树基础</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">0 概述 在说二叉树前，先来看看什么是树。树中基本单位是结点，结点之间的链接，称为分支。一棵...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-10-23T12:43:46+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 705</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-20168" class="post post-list post-20168 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/20168.html" title="盘点那些必问的数据结构算法题之链表" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277858-c7b13cd8ce47789-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="盘点那些必问的数据结构算法题之链表" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/20168.html" title="盘点那些必问的数据结构算法题之链表" rel="bookmark">盘点那些必问的数据结构算法题之链表</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">0 概述 链表作为一种基础的数据结构，在很多地方会用到。如在Linux内核代码，redis源...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-10-24T09:37:34+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 870</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-17507" class="post post-list post-17507 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/17507.html" title="数据结构：哈希表原理以及面试中的常见考点" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277858-d22a834751f3c0d-300x200.jpg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="数据结构：哈希表原理以及面试中的常见考点" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/17507.html" title="数据结构：哈希表原理以及面试中的常见考点" rel="bookmark">数据结构：哈希表原理以及面试中的常见考点</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">首先得看java最基本的两种数据结构，数组和链表的区别： 而哈希表的出现是为了解决链表访问不...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-08-07T09:04:36+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 1.4K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-20158" class="post post-list post-20158 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/20158.html" title="盘点那些必问的数据结构算法题之二分查找算法" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277858-c7b13cd8ce47789-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="盘点那些必问的数据结构算法题之二分查找算法" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/20158.html" title="盘点那些必问的数据结构算法题之二分查找算法" rel="bookmark">盘点那些必问的数据结构算法题之二分查找算法</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">0 概述 二分查找本身是个简单的算法，但是正是因为其简单，更容易写错。甚至于在二分查找算法刚...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-10-23T12:43:21+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 630</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-20162" class="post post-list post-20162 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/20162.html" title="盘点那些必问的数据结构算法题之二叉堆" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277588-2029f61ca3cc4b9-300x200.png" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="盘点那些必问的数据结构算法题之二叉堆" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/20162.html" title="盘点那些必问的数据结构算法题之二叉堆" rel="bookmark">盘点那些必问的数据结构算法题之二叉堆</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">0 概述 本文要描述的堆是二叉堆。二叉堆是一种数组对象，可以被视为一棵完全二叉树，树中每个结...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-10-23T12:44:03+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 629</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+
+<div class="col-lg-6 col-12">
+
+	<article id="post-16383" class="post post-list post-16383 type-post status-publish format-standard hentry category-sjjg">
+
+		
+	    <div class="entry-media"><div class="placeholder" style="padding-bottom: 66.666666666667%"><a href="https://www.cxyxiaowu.com/16383.html" title="数据结构如何一天速成？" rel="nofollow noopener noreferrer"><img class="lazyload" data-src="https://cxyxiaowu-1257126549.cos.ap-guangzhou.myqcloud.com//2022/03/1646277589-f2e17b298b8b0c6-300x200.jpg" src="https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/img/thumb-ing.gif" alt="数据结构如何一天速成？" /></a></div></div>
+	    <div class="entry-wrapper">
+
+	    	<span class="meta-category-dot"><a href="https://www.cxyxiaowu.com/sjjg" rel="category"><i class="dot"></i>数据结构面试题</a></span>	    	
+	    	<header class="entry-header">
+	    		<h2 class="entry-title"><a href="https://www.cxyxiaowu.com/16383.html" title="数据结构如何一天速成？" rel="bookmark">数据结构如何一天速成？</a></h2>	    	</header>
+	      
+			<div class="entry-excerpt">数据结构分类 1、数组 2、栈 3、队列 4、链表 5、树 6、散列表 7、堆 8、图 数据...</div>
+
+	      	<div class="entry-footer">
+			            <div class="entry-meta">
+            
+                          <span class="meta-date">
+                  <time datetime="2021-05-31T17:56:14+08:00">
+                    <i class="fa fa-clock-o"></i>
+                    2年前                  </time>
+              </span>
+                            <span class="meta-views"><i class="fa fa-eye"></i> 5.9K</span>
+            
+
+          </div>
+        			</div>
+	    </div>
+	</article>
+
+</div>
+            </div>
+            
+
+        </div>
+      </div></div>	</main><!-- #main -->
+	
+	<footer class="site-footer">
+				<div class="footer-copyright d-flex text-center">
+			<div class="container">
+							    <p class="m-0 small">
+			    	Copyright © 2021 <a href="http://www.cxyxiaowu.com">吴师兄学算法</a> - All rights reserved<a href="https://beian.miit.gov.cn" target="_blank" rel="noreferrer nofollow">粤ICP备19028366号 </a>				</p>
+								
+							</div>
+		</div>
+
+	</footer><!-- #footer -->
+
+</div><!-- #page -->
+
+<div class="rollbar">
+		<ul class="actions">
+			<li>
+						<a href="https://www.cxyxiaowu.com/" rel="nofollow noopener noreferrer" data-toggle="tooltip" data-html="true" data-placement="left" title="首页"><i class="fas fa-home"></i></a>
+		</li>
+				<li>
+						<a target="_blank" href="https://www.cxyxiaowu.com/question" rel="nofollow noopener noreferrer" data-toggle="tooltip" data-html="true" data-placement="left" title="问答"><i class="fas fa-chess-queen"></i></a>
+		</li>
+				<li>
+						<a target="_blank" href="https://www.algomooc.com" rel="nofollow noopener noreferrer" data-toggle="tooltip" data-html="true" data-placement="left" title="算法训练营"><i class="fas fa-cart-plus"></i></a>
+		</li>
+				<li>
+						<a target="_blank" href="https://www.cxyxiaowu.com/user" rel="nofollow noopener noreferrer" data-toggle="tooltip" data-html="true" data-placement="left" title="个人中心"><i class="fas fa-user"></i></a>
+		</li>
+			</ul>
+		<div class="rollbar-item back-to-top">
+		<i class="fas fa-chevron-up"></i>
+	</div>
+</div>
+<div class="m-menubar">
+		<ul>
+			<li>
+						<a href="https://www.cxyxiaowu.com" rel="nofollow noopener noreferrer"><i class="fas fa-home"></i>首页</a>
+		</li>
+				<li>
+						<a href="https://www.cxyxiaowu.com/question" rel="nofollow noopener noreferrer"><i class="fas fa-chess-queen"></i>问答</a>
+		</li>
+				<li>
+						<a href="https://www.cxyxiaowu.com/user" rel="nofollow noopener noreferrer"><i class="fas fa-user"></i>我的</a>
+		</li>
+				<li>
+			<a href="javacript:void(0);" class="back-to-top" rel="nofollow noopener noreferrer"><i class="fas fa-chevron-up"></i>顶部<span></span></a>
+		</li>
+	</ul>
+	</div>
+<div id="omnisearch" class="omnisearch">
+    <div class="container">
+        <form class="omnisearch-form" method="get" action="https://www.cxyxiaowu.com/">
+            <div class="form-group">
+                <div class="input-group input-group-merge input-group-flush">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"><i class="fas fa-search"></i></span>
+                    </div>
+
+					<div class="input-group-prepend d-flex align-items-center" style=" max-width: 35%; ">
+                    <select  name='cat' id='omnisearch-cat' class='selectpicker' >
+	<option value=''>全部</option>
+	<option class="level-0" value="111">数据结构基础知识</option>
+	<option class="level-0" value="110">数据结构面试题</option>
+	<option class="level-0" value="112">有趣的算法题</option>
+	<option class="level-0" value="109">闲谈</option>
+</select>
+				  	</div>
+                    <input type="text" class="search-ajax-input form-control" name="s" value="" placeholder="输入关键词 回车搜索..." autocomplete="off">
+
+                </div>
+            </div>
+        </form>
+        <div class="omnisearch-suggestions">
+            <div class="search-keywords">
+                <a href="https://www.cxyxiaowu.com/algobase" class="tag-cloud-link tag-link-111 tag-link-position-1" style="font-size: 14px;">数据结构基础知识</a>
+<a href="https://www.cxyxiaowu.com/sjjg" class="tag-cloud-link tag-link-110 tag-link-position-2" style="font-size: 14px;">数据结构面试题</a>
+<a href="https://www.cxyxiaowu.com/leetcode" class="tag-cloud-link tag-link-112 tag-link-position-3" style="font-size: 14px;">有趣的算法题</a>
+<a href="https://www.cxyxiaowu.com/mytalk" class="tag-cloud-link tag-link-109 tag-link-position-4" style="font-size: 14px;">闲谈</a>            </div>
+                    </div>
+    </div>
+</div>
+
+<div class="dimmer"></div>
+
+<div class="off-canvas">
+  <div class="canvas-close"><i class="fas fa-times"></i></div>
+  <div class="mobile-menu d-block d-xl-none d-lg-none"></div>
+</div>
+<script src='https://www.cxyxiaowu.com/wp-content/plugins/beepress/lib/beepress-front.js?ver=6.3.6' id='BPFRONTJS-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/plugins/bbpress/templates/default/js/editor.js?ver=2.5.14-6684' id='bbpress-editor-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/js/popper.min.js?ver=4.4.0' id='popper-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/bootstrap/js/bootstrap.min.js?ver=4.6.0' id='bootstrap-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/jarallax/jarallax.min.js?ver=1.12.5' id='jarallax-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/jarallax/jarallax-video.min.js?ver=1.0.1' id='jarallax-video-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/js/plugins.js?ver=4.4.0' id='plugins-js'></script>
+<script id='app-js-extra'>
+var riprov2 = {"home_url":"https:\/\/www.cxyxiaowu.com","admin_url":"https:\/\/www.cxyxiaowu.com\/wp-admin\/admin-ajax.php","is_qq_captcha":"0","is_single_gallery":"1","comment_list_order":"asc","infinite_load":"\u52a0\u8f7d\u66f4\u591a","infinite_loading":"\u52a0\u8f7d\u4e2d...","site_notice":{"is":"0","auto":"1","color":"#5b5b5b","html":"<div class=\"notify-content\"><h3><i class=\"fa fa-bell-o mr-2\"><\/i>\u767d\u5ad6\u963f\u91cc\u4e91\u670d\u52a1\u5668\uff01<\/h3><div>\u6dfb\u52a0\u5434\u5e08\u5144\u7684\u5fae\u4fe1 wzb_3377\uff0c\u767d\u5ad6 1 \u53f0 1 G 2 \u6838\u7684\u670d\u52a1\u5668\u4e00\u5e74\uff01<\/div><\/div>"},"site_js_text":{"login_txt":"\u8bf7\u70b9\u51fb\u5b89\u5168\u9a8c\u8bc1","reg1_txt":"\u90ae\u7bb1\u683c\u5f0f\u9519\u8bef","reg2_txt":"\u8bf7\u70b9\u51fb\u5b89\u5168\u9a8c\u8bc1","reg3_txt":"\u7528\u6237\u540d\u5fc5\u987b\u662f\u82f1\u6587","pass_txt":"\u8bf7\u70b9\u51fb\u5b89\u5168\u9a8c\u8bc1","bind_txt":"\u8bf7\u70b9\u51fb\u9a8c\u8bc1\u6309\u94ae\u8fdb\u884c\u9a8c\u8bc1","copy_txt":" \u590d\u5236\u6210\u529f","poster_txt":"\u6d77\u62a5\u52a0\u8f7d\u5f02\u5e38","mpwx1_txt":"\u8bf7\u4f7f\u7528\u5fae\u4fe1\u626b\u7801\u767b\u5f55","mpwx2_txt":"\u5173\u6ce8\u516c\u4f17\u53f7\u5373\u53ef\u767b\u5f55<\/br>\u4e8c\u7ef4\u7801\u6709\u6548\u671f3\u5206\u949f","pay1_txt":"\u652f\u4ed8\u5b8c\u6210","pay2_txt":"\u53d6\u6d88\u652f\u4ed8","pay3_txt":"\u652f\u4ed8\u6210\u529f","capt_txt":"\u9a8c\u8bc1\u4e2d","capt1_txt":"\u9a8c\u8bc1\u901a\u8fc7","capt2_txt":"\u9a8c\u8bc1\u5931\u8d25","prompt_txt":"\u8bf7\u8f93\u5165\u56fe\u7247URL\u5730\u5740","comment_txt":"\u63d0\u4ea4\u4e2d....","comment1_txt":"\u63d0\u4ea4\u6210\u529f"},"pay_type_html":{"html":"<div class=\"pay-button-box\"><\/div>","alipay":0,"weixinpay":0,"paypal":0,"iconpay":0}};
+</script>
+<script src='https://www.cxyxiaowu.com/wp-content/themes/ripro-v2/assets/js/app.js?ver=4.4.0' id='app-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-includes/js/clipboard.min.js?ver=5.7.9' id='clipboard-js'></script>
+<script src='https://www.cxyxiaowu.com/wp-includes/js/wp-embed.min.js?ver=5.7.9' id='wp-embed-js'></script>
+ <script id="module-clipboard"> (function($) { $(function() { var pre = document.getElementsByTagName("pre"); var pasteContent = document.getElementById("paste-content"); var hasLanguage = false; for (var i = 0; i < pre.length; i++) { var codeClass = pre[i].children[0].className; var isLanguage = codeClass.indexOf("language-"); var excludedCodeClassNames = [ "language-katex", "language-seq", "language-sequence", "language-flow", "language-flowchart", "language-mermaid", ]; var isExcluded = excludedCodeClassNames.indexOf(codeClass); if (isExcluded !== -1) { isLanguage = -1; } if (isLanguage !== -1) { var button = document.createElement("button"); button.className = "copy-button"; button.textContent = "Copy"; pre[i].appendChild(button); hasLanguage = true; } }; if (hasLanguage) { var copyCode = new ClipboardJS(".copy-button", { target: function(trigger) { return trigger.previousElementSibling; } }); copyCode.on("success", function(event) { event.clearSelection(); event.trigger.textContent = "Copied"; window.setTimeout(function() { event.trigger.textContent = "Copy"; }, 2000); }); } }); })(jQuery); </script> <script>
+                        (function(){
+                            var bp = document.createElement('script');
+                            var curProtocol = window.location.protocol.split(':')[0];
+                            if (curProtocol === 'https') {
+                                bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+                            }
+                            else {
+                                bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                            }
+                            var s = document.getElementsByTagName("script")[0];
+                            s.parentNode.insertBefore(bp, s);
+                        })();
+                        </script>
+<!-- 自定义js代码 统计代码 -->
+<!-- 自定义js代码 统计代码 END -->
+
+</body>
+</html>
                                 
