@@ -11,14 +11,12 @@
             margin: 0;
             padding: 0;
         }
-
         header {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 1em;
         }
-
         main {
             width: 80%;
             margin: 2em auto;
@@ -26,15 +24,35 @@
             background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         h1 {
             font-size: 2em;
             margin-bottom: 0.5em;
         }
-
         p {
             font-size: 1em;
             line-height: 1.5;
+        }
+        #contact-form {
+            margin-top: 2em;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 0.5em;
+            margin-bottom: 1em;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 0.5em 1em;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
         }
     </style>
 </head>
@@ -44,13 +62,29 @@
     </header>
     <main>
         <h1>关于我</h1>
-        <p>你好，我是张三，一名软件工程师。我喜欢编程，尤其是Web开发。这个网站是我用来展示我的技能和作品的地方。</p>
+        <p>你好，我是张三，一名软件工程师。我喜欢编程，喜欢探索新技术。</p>
         <h1>联系方式</h1>
-        <p>如果你对我的工作感兴趣，可以通过以下方式联系我：</p>
-        <ul>
-            <li>电子邮件：zhangsan@example.com</li>
-            <li>电话：+86 1234567890</li>
-        </ul>
+        <p>邮箱：zhangsan@example.com</p>
+        <p>电话：+86 1234567890</p>
+        <h1>联系我</h1>
+        <form id="contact-form">
+            <label for="name">姓名：</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">邮箱：</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">留言：</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <button type="submit">提交</button>
+        </form>
     </main>
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // 阻止表单默认提交行为
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+            alert('感谢您的留言，我们会尽快回复您！');
+        });
+    </script>
 </body>
 </html>
