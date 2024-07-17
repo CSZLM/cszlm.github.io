@@ -125,5 +125,25 @@
             document.getElementById('comment').value = '';
         });
     </script>
+    <!-- 在原有代码的基础上添加以下内容 -->
+<div id="searchBox">
+    <input type="text" id="searchInput" placeholder="搜索评论">
+    <button id="searchButton">搜索</button>
+</div>
+<script>
+    // 为搜索按钮添加点击事件
+    document.getElementById('searchButton').addEventListener('click', function() {
+        var searchInput = document.getElementById('searchInput').value;
+        var comments = document.querySelectorAll('#commentList p');
+        for (var i = 0; i < comments.length; i++) {
+            if (comments[i].innerText.includes(searchInput)) {
+                comments[i].style.display = 'block';
+            } else {
+                comments[i].style.display = 'none';
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
